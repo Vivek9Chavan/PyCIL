@@ -49,3 +49,5 @@ print(response)
 
 response, history = model.chat(tokenizer,'What is the quantity of the object', history=history)
 print(response)
+
+print('Hello')
