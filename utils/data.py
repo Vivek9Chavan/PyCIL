@@ -86,8 +86,8 @@ class iImageNet1000(iData):
 
     def download_data(self):
         assert 0, "You should specify the folder of your dataset"
-        train_dir = "[DATA-PATH]/train/"
-        test_dir = "[DATA-PATH]/val/"
+        train_dir = "/mnt/1TBNVME/vivek/2024/tiny-imagenet-200/train/"
+        test_dir = "/mnt/1TBNVME/vivek/2024/tiny-imagenet-200/val/"
 
         train_dset = datasets.ImageFolder(train_dir)
         test_dset = datasets.ImageFolder(test_dir)
@@ -99,12 +99,12 @@ class iImageNet1000(iData):
 class iImageNet100(iData):
     use_path = True
     train_trsf = [
-        transforms.RandomResizedCrop(224),
+        #transforms.RandomResizedCrop(224),
         transforms.RandomHorizontalFlip(),
     ]
     test_trsf = [
-        transforms.Resize(256),
-        transforms.CenterCrop(224),
+        #transforms.Resize(256),
+        #transforms.CenterCrop(224),
     ]
     common_trsf = [
         transforms.ToTensor(),
@@ -114,9 +114,9 @@ class iImageNet100(iData):
     class_order = np.arange(1000).tolist()
 
     def download_data(self):
-        assert 0, "You should specify the folder of your dataset"
-        train_dir = "[DATA-PATH]/train/"
-        test_dir = "[DATA-PATH]/val/"
+        #assert 0, "You should specify the folder of your dataset"
+        train_dir = "/mnt/1TBNVME/vivek/2024/tiny-imagenet-200/train/"
+        test_dir = "/mnt/1TBNVME/vivek/2024/tiny-imagenet-200/val/"
 
         train_dset = datasets.ImageFolder(train_dir)
         test_dset = datasets.ImageFolder(test_dir)

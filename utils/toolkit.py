@@ -25,6 +25,8 @@ def count_parameters(model, trainable=False):
 
 
 def tensor2numpy(x):
+    x = torch.Tensor(x)
+    x = x.clone().detach().requires_grad_(True) #added by vivek
     return x.cpu().data.numpy() if x.is_cuda else x.data.numpy()
 
 
